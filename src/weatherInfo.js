@@ -51,7 +51,44 @@ async function getProcessedWeatherData(location) {
     chanceOfRain,
     windSpeedMph,
   };
+
   return processedWeatherData;
 }
 
-export { getCurrentWeather, getProcessedWeatherData, getForecastWeather };
+async function getProcessedForecastData(location) {
+  try {
+    const forecastWeather = await getForecastWeather(location);
+    const forecastWeatherData = await forecastWeather.json();
+
+    // Initialize an object to store forecast data for multiple days
+    const processedForecastData = {};
+
+    // Retrieve the number of days of forecast data
+    const daysOfForecast = forecastWeatherData.forecast.forecastday.length;
+
+    // Loop through each day of the forecast
+    for (let i = 0; i < daysOfForecast; i += 1) {
+      // Destructure the necessary data from each day's forecast
+      const {
+        date,
+        day: {
+          maxtemp_f: maxTempF,
+          mintemp_f: minTempF,
+          condition: { icon },
+        },
+      } = forecastWeatherData.forecast.forecastday[i];
+      const dayOfWeek = format(parseISO(date), 'EEEE'); // Format the date as day of the week
+
+      // Create a dynamic key for each day and store relevant data
+      processedForecastData[`day${i + 1}`] = { dayOfWeek, maxTempF, minTempF, icon };
+    }
+
+    console.log(processedForecastData);
+    return processedForecastData;
+  } catch (error) {
+    console.error('Error processing forecast data:', error);
+    throw error; // Rethrow or handle the error as appropriate
+  }
+}
+
+export { getCurrentWeather, getProcessedWeatherData, getForecastWeather, getProcessedForecastData };

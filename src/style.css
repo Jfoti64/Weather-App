@@ -16,6 +16,10 @@ body {
   flex-direction: column;
 }
 
+.bottomRow {
+  flex-direction: column;
+}
+
 .topRow,
 .bottomRow,
 .topLeft,

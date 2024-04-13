@@ -20,4 +20,15 @@ async function renderWeatherData(weatherData) {
   weatherWindMph.innerHTML = `${weatherData.windSpeedMph} mph`;
 }
 
-export { renderWeatherData };
+async function renderForecastData(forecastData) {
+  
+  // Select the outer element by its class name
+  const outerElement = document.querySelector('.current-day-plus-0');
+
+  // Find the inner element within the outer element
+  const innerElement = outerElement.querySelector('.forecast-daily-day');
+
+  innerElement.innerHTML = forecastData.day1.dayOfWeek;
+}
+
+export { renderWeatherData, renderForecastData };
