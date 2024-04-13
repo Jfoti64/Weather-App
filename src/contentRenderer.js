@@ -1,5 +1,3 @@
-
-
 async function renderWeatherData(weatherData) {
   const weatherDescription = document.querySelector('.weather-description');
   const weatherLocation = document.querySelector('.weather-location');
@@ -9,8 +7,8 @@ async function renderWeatherData(weatherData) {
 
   weatherDescription.innerHTML = weatherData.conditionText;
   weatherLocation.innerHTML = weatherData.locationName;
-  weatherDate.innerHTML = weatherData.locationLocalTime;
-  weatherTime.innerHTML = weatherData.locationLocalTime;
+  weatherDate.innerHTML = weatherData.formattedLocalDate;
+  weatherTime.innerHTML = weatherData.formattedLocalTime;
   weatherTemperature.innerHTML = `${weatherData.temperature} F°`;
 }
 
