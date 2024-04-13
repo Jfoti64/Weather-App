@@ -8,11 +8,11 @@
   <body>
     <div class="topRow flex">
       <div class="topLeft flex">
-        <div class="weather-description"></div>
-        <div class="weather-city"></div>
-        <div class="weather-date"></div>
-        <div class="weather-time"></div>
-        <div class="weather-temperature-f"></div>
+        <div class="weather-description">Temp description</div>
+        <div class="weather-city">Temp city</div>
+        <div class="weather-date">Temp date</div>
+        <div class="weather-time">Temp time</div>
+        <div class="weather-temperature-f">Temp temp</div>
         <div class="weather-icon">
           <svg></svg>
         </div>
@@ -21,7 +21,44 @@
           <button type="submit" id="submitLocationButton">Submit</button>
         </form>
       </div>
-      <div class="topRight flex"></div>
+      <div class="topRight flex">
+        <div class="weather-details">
+            <div class="weather-details-icon">
+                <svg></svg>
+            </div>
+            <div class="weather-details-info">
+                <div class="weather-details-label">Feels Like</div>
+                <div class="weather-details-data" id="feels-like"></div>
+            </div>
+        </div>
+        <div class="weather-details">
+            <div class="weather-details-icon">
+                <svg></svg>
+            </div>
+            <div class="weather-details-info">
+                <div class="weather-details-label">Humidity</div>
+                <div class="weather-details-data" id="humidity"></div>
+            </div>
+        </div>
+        <div class="weather-details">
+            <div class="weather-details-icon">
+                <svg></svg>
+            </div>
+            <div class="weather-details-info">
+                <div class="weather-details-label">Chance of Rain</div>
+                <div class="weather-details-data" id="chance-of-rain"></div>
+            </div>
+        </div>
+        <div class="weather-details">
+            <div class="weather-details-icon">
+                <svg></svg>
+            </div>
+            <div class="weather-details-info">
+                <div class="weather-details-label">Wind Speed</div>
+                <div class="weather-details-data" id="wind speed"></div>
+            </div>
+        </div>
+      </div>
     </div>
     <div class="bottomRow flex"></div>
   </body>

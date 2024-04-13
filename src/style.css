@@ -5,3 +5,7 @@ body, .flex {
 body {
   flex-direction: column;
 }
+
+.topLeft, .topRight {
+  flex-direction: column;
+}
