@@ -10,9 +10,13 @@ async function getCurrentWeather(location) {
 async function getProcessedWeatherData(location) {
   const response = await getCurrentWeather(location);
   const weatherData = await response.json();
+  console.log(weatherData);
   const temperature = weatherData.current.temp_f;
   const conditionText = weatherData.current.condition.text;
-  const processedWeatherData = { temperature, conditionText };
+  const locationName = weatherData.location.name;
+  const locationLocalTime = weatherData.location.localtime;
+  const processedWeatherData = { temperature, conditionText, locationName, locationLocalTime };
+  console.log(processedWeatherData.locationLocalTime);
   return processedWeatherData;
 }
 
