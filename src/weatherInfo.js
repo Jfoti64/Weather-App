@@ -18,10 +18,9 @@ async function getProcessedWeatherData(location) {
   const locationLocalTime = weatherData.location.localtime;
 
   const adjustedDate = locationLocalTime.replace(' ', 'T').replace(/T(\d):/, 'T0$1:');
-
   const parsedDate = parseISO(adjustedDate);
   const formattedLocalDate = format(parsedDate, 'EEEE, MMMM do, yyyy');
-  const formattedLocalTime = format(parsedDate, 'h aaa');
+  const formattedLocalTime = format(parsedDate, 'h:mm aaa');
 
   const processedWeatherData = {
     temperature,
