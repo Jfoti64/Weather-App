@@ -6,6 +6,8 @@ async function renderWeatherData(weatherData) {
   const weatherTemperature = document.querySelector('.weather-temperature-f');
   const weatherFeelsLike = document.getElementById('feels-like');
   const weatherHumidity = document.getElementById('humidity');
+  const weatherChanceOfRain = document.getElementById('chance-of-rain');
+  const weatherWindMph = document.getElementById('wind-speed');
 
   weatherDescription.innerHTML = weatherData.conditionText;
   weatherLocation.innerHTML = weatherData.locationName;
@@ -14,6 +16,8 @@ async function renderWeatherData(weatherData) {
   weatherTemperature.innerHTML = `${weatherData.temperature} F°`;
   weatherFeelsLike.innerHTML = weatherData.feelsLikeF;
   weatherHumidity.innerHTML = `${weatherData.humidity} %`;
+  weatherChanceOfRain.innerHTML = `${weatherData.chanceOfRain} %`;
+  weatherWindMph.innerHTML = `${weatherData.windSpeedMph} mph`;
 }
 
 export { renderWeatherData };

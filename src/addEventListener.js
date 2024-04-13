@@ -1,4 +1,4 @@
-import { getProcessedWeatherData } from './weatherInfo';
+import { getProcessedWeatherData, getForecastWeather } from './weatherInfo';
 import { renderWeatherData } from './contentRenderer';
 
 const form = document.getElementById('locationInputForm');

@@ -34,6 +34,8 @@ async function getProcessedWeatherData(location) {
   const formattedLocalTime = format(parsedDate, 'h:mm aaa');
   const feelsLikeF = currentWeatherData.current.feelslike_f;
   const { humidity } = currentWeatherData.current;
+  const chanceOfRain = forecastWeatherData.forecast.forecastday[0].day.daily_chance_of_rain;
+  const windSpeedMph = currentWeatherData.current.wind_mph;
 
   console.log(currentWeatherData);
   console.log(forecastWeatherData);
@@ -46,6 +48,8 @@ async function getProcessedWeatherData(location) {
     formattedLocalTime,
     feelsLikeF,
     humidity,
+    chanceOfRain,
+    windSpeedMph,
   };
   return processedWeatherData;
 }
