@@ -1,6 +1,7 @@
 import './style.css';
-import { getCurrentWeather } from './weatherInfo';
+import { getProcessedWeatherData } from './weatherInfo';
 
-const currentWeather = getCurrentWeather('miami');
-
-console.log(currentWeather);
+(async function log() {
+  const info = await getProcessedWeatherData('boston');
+  console.log(info);
+})();
