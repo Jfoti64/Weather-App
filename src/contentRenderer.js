@@ -13,7 +13,7 @@ async function renderWeatherData(weatherData) {
   weatherLocation.innerHTML = weatherData.locationName;
   weatherDate.innerHTML = weatherData.formattedLocalDate;
   weatherTime.innerHTML = weatherData.formattedLocalTime;
-  weatherTemperature.innerHTML = `${weatherData.temperature} F°`;
+  weatherTemperature.innerHTML = `${weatherData.temperature} °F`;
   weatherFeelsLike.innerHTML = weatherData.feelsLikeF;
   weatherHumidity.innerHTML = `${weatherData.humidity} %`;
   weatherChanceOfRain.innerHTML = `${weatherData.chanceOfRain} %`;
@@ -33,7 +33,7 @@ async function renderForecastData(processedForecastData) {
     const dayIcon = dayElement.querySelector('.weatherIcon');
 
     dayOfWeekElement.innerHTML = dayData.dayOfWeek;
-    dayTemperature.innerHTML = dayData.maxTempF;
+    dayTemperature.innerHTML = `${dayData.maxTempF} °F`;
     const imageUrl = `https:${dayData.icon}`; // Ensuring HTTPS is used if required
     console.log(imageUrl);
     dayIcon.src = imageUrl;

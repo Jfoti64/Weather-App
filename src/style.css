@@ -1,3 +1,9 @@
+html {
+  height: 100vh;
+  font-family: montserrat, sans-serif;
+  font-weight: 600;
+}
+
 body,
 .flex {
   display: flex;
@@ -5,15 +11,33 @@ body,
 
 body {
   flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  margin: 0px;
 }
 
 .topRow {
   justify-content: space-between;
 }
 
+.topRow, .bottomRow {
+  margin: 8px;
+}
+
 .topLeft,
 .topRight {
   flex-direction: column;
+}
+
+.topLeft,
+.topRight,
+.bottomRow {
+  padding: 10px;
+}
+
+.topLeft div,
+.topRight div {
+  margin: 5px;
 }
 
 .bottomRow {
@@ -25,4 +49,20 @@ body {
 .topLeft,
 .topRight {
   border: 2px solid black;
+}
+
+.forecast-daily {
+  justify-content: space-around;
+}
+
+.topRight {
+  align-items: center;
+  text-align: center;
+}
+
+.weather-description {
+  margin-bottom: 1rem;
+  font-size: 4rem;
+  font-weight: 500;
+  text-align: center;
 }
