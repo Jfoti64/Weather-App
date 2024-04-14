@@ -20,15 +20,24 @@ async function renderWeatherData(weatherData) {
   weatherWindMph.innerHTML = `${weatherData.windSpeedMph} mph`;
 }
 
-async function renderForecastData(forecastData) {
-  
-  // Select the outer element by its class name
-  const outerElement = document.querySelector('.current-day-plus-0');
+async function renderForecastData(processedForecastData) {
+  // Should be able to use a for loop to populate all the forecast days.
+  Object.keys(processedForecastData).forEach((dayKey) => {
+    const dayData = processedForecastData[dayKey];
 
-  // Find the inner element within the outer element
-  const innerElement = outerElement.querySelector('.forecast-daily-day');
+    // Select the outer element by its class name
+    const dayElement = document.querySelector(`.${dayKey}`);
 
-  innerElement.innerHTML = forecastData.day1.dayOfWeek;
+    const dayOfWeekElement = dayElement.querySelector('.forecast-daily-day');
+    const dayTemperature = dayElement.querySelector('.forecast-daily-temperature');
+    const dayIcon = dayElement.querySelector('.weatherIcon');
+
+    dayOfWeekElement.innerHTML = dayData.dayOfWeek;
+    dayTemperature.innerHTML = dayData.maxTempF;
+    const imageUrl = `https:${dayData.icon}`; // Ensuring HTTPS is used if required
+    console.log(imageUrl);
+    dayIcon.src = imageUrl;
+  });
 }
 
 export { renderWeatherData, renderForecastData };
