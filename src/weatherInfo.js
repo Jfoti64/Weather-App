@@ -32,6 +32,7 @@ async function getProcessedWeatherData(location) {
   const parsedDate = parseISO(adjustedDate);
   const formattedLocalDate = format(parsedDate, 'EEEE, MMMM do, yyyy');
   const formattedLocalTime = format(parsedDate, 'h:mm aaa');
+  const weatherIcon = currentWeatherData.current.condition.icon;
   const feelsLikeF = currentWeatherData.current.feelslike_f;
   const { humidity } = currentWeatherData.current;
   const chanceOfRain = forecastWeatherData.forecast.forecastday[0].day.daily_chance_of_rain;
@@ -46,6 +47,7 @@ async function getProcessedWeatherData(location) {
     locationName,
     formattedLocalDate,
     formattedLocalTime,
+    weatherIcon,
     feelsLikeF,
     humidity,
     chanceOfRain,

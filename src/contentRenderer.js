@@ -4,6 +4,7 @@ async function renderWeatherData(weatherData) {
   const weatherDate = document.querySelector('.weather-date');
   const weatherTime = document.querySelector('.weather-time');
   const weatherTemperature = document.querySelector('.weather-temperature-f');
+  const weatherIcon = document.querySelector('.weather-icon');
   const weatherFeelsLike = document.getElementById('feels-like');
   const weatherHumidity = document.getElementById('humidity');
   const weatherChanceOfRain = document.getElementById('chance-of-rain');
@@ -14,7 +15,11 @@ async function renderWeatherData(weatherData) {
   weatherDate.innerHTML = weatherData.formattedLocalDate;
   weatherTime.innerHTML = weatherData.formattedLocalTime;
   weatherTemperature.innerHTML = `${weatherData.temperature} °F`;
-  weatherFeelsLike.innerHTML = weatherData.feelsLikeF;
+
+  const iconUrl = `https:${weatherData.weatherIcon}`;
+  weatherIcon.src = iconUrl;
+
+  weatherFeelsLike.innerHTML = `${weatherData.feelsLikeF} °F`;
   weatherHumidity.innerHTML = `${weatherData.humidity} %`;
   weatherChanceOfRain.innerHTML = `${weatherData.chanceOfRain} %`;
   weatherWindMph.innerHTML = `${weatherData.windSpeedMph} mph`;
