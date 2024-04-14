@@ -40,7 +40,6 @@ async function renderForecastData(processedForecastData) {
     dayOfWeekElement.innerHTML = dayData.dayOfWeek;
     dayTemperature.innerHTML = `${dayData.maxTempF} °F`;
     const imageUrl = `https:${dayData.icon}`; // Ensuring HTTPS is used if required
-    console.log(imageUrl);
     dayIcon.src = imageUrl;
   });
 }

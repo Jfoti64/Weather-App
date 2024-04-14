@@ -38,9 +38,6 @@ async function getProcessedWeatherData(location) {
   const chanceOfRain = forecastWeatherData.forecast.forecastday[0].day.daily_chance_of_rain;
   const windSpeedMph = currentWeatherData.current.wind_mph;
 
-  console.log(currentWeatherData);
-  console.log(forecastWeatherData);
-
   const processedWeatherData = {
     temperature,
     conditionText,
@@ -85,7 +82,6 @@ async function getProcessedForecastData(location) {
       processedForecastData[`day${i + 1}`] = { dayOfWeek, maxTempF, minTempF, icon };
     }
 
-    console.log(processedForecastData);
     return processedForecastData;
   } catch (error) {
     console.error('Error processing forecast data:', error);

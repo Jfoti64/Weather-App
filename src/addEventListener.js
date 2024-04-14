@@ -11,9 +11,7 @@ form.addEventListener('submit', async (event) => {
     renderWeatherData(weatherData);
 
     const forecastData = await getProcessedForecastData(locationInput);
-    renderForecastData(forecastData)
-
-    console.log(forecastData);
+    renderForecastData(forecastData);
   } catch (error) {
     console.error('Failed to fetch weather data:', error);
   }
